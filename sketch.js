@@ -5,6 +5,8 @@ let classifier;
 let leftbutton;
 let rightbutton;
 let trainbutton;
+var w = window.innerWidth;
+var h = window.innerHeight;  
 function modelReady(){
     console.log('Model is ready!!!!');
     //mobilenet.predict(gotResults);
@@ -64,3 +66,10 @@ function draw(){
     textSize(30);
     text(lable,10,height-30);
 }
+
+window.onresize = function() {
+    // assigns new values for width and height variables
+    w = window.innerWidth;
+    h = window.innerHeight;  
+    canvas.size(w,h);
+  }
